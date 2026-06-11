@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useSession } from "next-auth/react";
+import { SessionProvider, useSession } from "next-auth/react";
 import { useState, useEffect } from "react";
 
 import { Button } from "@/components/ui/button";
@@ -13,6 +13,14 @@ import { UserAvatar } from "@/components/ui/user-avatar";
 import { ThemeToggleWrapper } from "@/components/ui/theme-toggle-wrapper";
 
 export function Header() {
+  return (
+    <SessionProvider>
+      <HeaderContent />
+    </SessionProvider>
+  );
+}
+
+function HeaderContent() {
   const pathname = usePathname();
   const { data: session } = useSession();
   const [isAdmin, setIsAdmin] = useState(false);
