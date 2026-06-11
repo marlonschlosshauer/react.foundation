@@ -4,7 +4,6 @@ import "./globals.css";
 
 import { ThemeProvider } from "@/components/providers/theme-provider";
 import { Header } from "@/components/layout/header";
-import { getServerAuthSession } from "@/lib/auth";
 import { SupportChat } from "@/features/support-chat";
 
 const geistSans = Geist({
@@ -71,7 +70,6 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const session = await getServerAuthSession();
   const isChatEnabled = process.env.NEXT_PUBLIC_ENABLE_CHATBOT === "true";
   return (
     <html lang="en" suppressHydrationWarning>
