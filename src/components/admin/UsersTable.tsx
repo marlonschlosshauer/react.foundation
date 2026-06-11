@@ -11,7 +11,7 @@ import { RFDS, type TableColumn } from '@/components/rfds';
 import { RoleSelector } from '@/components/admin/role-selector';
 import type { User, UserRole } from '@/lib/admin/types';
 import { ROLE_LABELS } from '@/lib/admin/types';
-import { updateUserRolesAction, removeUserAction } from '@/app/admin/actions';
+import { updateUserRolesAction, removeUserAction } from '@/app/(dynamic)/admin/actions';
 import { Pencil, Trash2 } from 'lucide-react';
 
 export interface UsersTableProps {

@@ -15,7 +15,7 @@ import {
   denyRequestAction,
   replyToRequestAction,
   resendAdminNotificationAction,
-} from '@/app/admin/actions';
+} from '@/app/(dynamic)/admin/actions';
 import { MessageSquare, CheckCircle, XCircle, Mail, Crown, User as UserIcon, Clock, Archive } from 'lucide-react';
 
 export interface RequestsTableProps {
