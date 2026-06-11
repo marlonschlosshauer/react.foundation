@@ -37,3 +37,7 @@ export function CommunitySortDropdown() {
 
   return <SortDropdown options={SORT_OPTIONS} value={currentSort} onChange={handleSortChange} />;
 }
+
+export function CommunitySortDropdownSkeleton() {
+  return <SortDropdown options={SORT_OPTIONS} value={undefined} onChange={() => {}} />;
+}

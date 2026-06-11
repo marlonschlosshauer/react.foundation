@@ -8,7 +8,7 @@ import { CommunityMap } from '@/components/communities/CommunityMap';
 import { CommunityFilters } from '@/components/communities/CommunityFilters';
 import { CommunityList } from '@/components/communities/CommunityList';
 import { CommunityStats } from '@/components/communities/CommunityStats';
-import { CommunitySortDropdown } from '@/components/communities/CommunitySortDropdown';
+import { CommunitySortDropdown, CommunitySortDropdownSkeleton } from '@/components/communities/CommunitySortDropdown';
 import { AddCommunityCTA } from '@/components/communities/AddCommunityCTA';
 import './leaflet.css';
 
@@ -101,7 +101,9 @@ export default function CommunitiesPage() {
                 <h2 className="text-2xl md:text-3xl font-bold text-foreground">
                   All Communities
                 </h2>
-                <CommunitySortDropdown />
+							  <Suspense fallback={<CommunitySortDropdownSkeleton/>}>
+									<CommunitySortDropdown />
+								</Suspense>
               </div>
 
               <Suspense fallback={<ListSkeleton />}>
