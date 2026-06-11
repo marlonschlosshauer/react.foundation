@@ -5,6 +5,7 @@ import { Pill } from "@/components/ui/pill";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";
 import { getAllAuthors } from "@/lib/authors";
 import { Footer } from "@/components/layout/footer";
+import { NoOpenerLink } from "@/components/ui/nooper-link";
 
 export const metadata: Metadata = {
   title: "Authors",
@@ -66,26 +67,17 @@ export default function AuthorsPage() {
                     {/* Social Links */}
                     <div className="mt-6 flex justify-center gap-4">
                       {author.github && (
-                        <a
+                        <NoOpenerLink
                           href={author.github}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-foreground/60 transition hover:text-cyan-300"
-                          onClick={(e) => e.stopPropagation()}
+													className="text-foreground/60 transition hover:text-cyan-300" 
                         >
                           GitHub
-                        </a>
+                        </NoOpenerLink>
                       )}
                       {author.twitter && (
-                        <a
-                          href={author.twitter}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-foreground/60 transition hover:text-cyan-300"
-                          onClick={(e) => e.stopPropagation()}
-                        >
+                        <NoOpenerLink href={author.twitter}>
                           Twitter
-                        </a>
+                        </NoOpenerLink>
                       )}
                     </div>
                   </Link>
