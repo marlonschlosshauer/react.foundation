@@ -86,7 +86,11 @@ export function ThemeProvider({
 
   // Prevent hydration mismatch by not rendering until mounted
   if (!hasMounted) {
-    return <div style={{ visibility: 'hidden' }}>{children}</div>;
+	  return (
+			<ThemeContext.Provider value={{ theme, setTheme, effectiveTheme }}>
+        <div style={{ visibility: 'hidden' }}>{children}</div>
+			</ThemeContext.Provider>
+		)
   }
 
   return (
